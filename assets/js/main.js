@@ -80,4 +80,40 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    /* -------- Preloader: mostrar al navegar entre páginas -- */
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        document.addEventListener('click', function (e) {
+            const a = e.target.closest('a');
+            if (!a) { return; }
+            const href = a.getAttribute('href');
+            if (!href || href.charAt(0) === '#') { return; }
+            if (a.target === '_blank' || a.hasAttribute('download')) { return; }
+            if (/^(mailto:|tel:|javascript:)/i.test(href)) { return; }
+
+            const dest = new URL(a.href, window.location.href);
+            if (dest.origin !== window.location.origin) { return; }
+            // Misma página (solo cambia el ancla) -> no mostrar carga
+            if (dest.pathname === window.location.pathname && dest.hash) { return; }
+
+            preloader.classList.remove('preloader--hidden');
+        });
+    }
+
+});
+
+/* -------- Preloader: ocultar cuando la página termina de cargar -- */
+window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        setTimeout(function () { preloader.classList.add('preloader--hidden'); }, 250);
+    }
+});
+
+/* Si el usuario vuelve con el botón "atrás" (bfcache), ocultar la carga */
+window.addEventListener('pageshow', function (e) {
+    if (e.persisted) {
+        const preloader = document.getElementById('preloader');
+        if (preloader) { preloader.classList.add('preloader--hidden'); }
+    }
 });

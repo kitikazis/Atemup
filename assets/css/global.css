@@ -286,3 +286,56 @@ svg.icon-inline { display: inline-block; vertical-align: middle; }
 
 /* Íconos en línea (footer) */
 .icon-inline { width: 16px; height: 16px; margin-right: 5px; }
+
+/* ----------------------- LOGO (imagen) --------------------- */
+.logo-img { height: 46px; width: auto; display: block; }
+.footer-logo { height: 44px; width: auto; display: block; }
+
+/* ----------------------- PRELOADER ------------------------- */
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.preloader-logo {
+    width: 190px;
+    max-width: 55%;
+    height: auto;
+    animation: preloaderPulse 1.4s ease-in-out infinite;
+}
+
+.preloader-spinner {
+    width: 38px;
+    height: 38px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #ef4444;
+    border-radius: 50%;
+    animation: preloaderSpin 0.8s linear infinite;
+}
+
+@keyframes preloaderPulse {
+    0%, 100% { transform: scale(1);    opacity: 1;   }
+    50%      { transform: scale(1.07); opacity: 0.7; }
+}
+
+@keyframes preloaderSpin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .preloader-logo, .preloader-spinner { animation: none; }
+}

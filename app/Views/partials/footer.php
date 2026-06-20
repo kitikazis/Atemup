@@ -6,12 +6,7 @@
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <div class="logo" style="margin-bottom: 20px;">
-                <div class="logo-text">
-                    <span style="color: white;"><?= e(SITE_NAME) ?></span>
-                    <span style="color: #cbd5e1; font-size: 11px;"><?= e(SITE_TAGLINE) ?></span>
-                </div>
-            </div>
+            <img class="footer-logo" src="<?= asset('img/atemup_white.png') ?>" alt="<?= e(SITE_NAME) ?>" style="margin-bottom: 20px;">
         </div>
 
         <div class="footer-section">

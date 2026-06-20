@@ -23,6 +23,13 @@
 </head>
 <body>
 
+<!-- Preloader / transición entre páginas -->
+<div id="preloader" class="preloader">
+    <img class="preloader-logo" src="<?= asset('img/atemup_white.png') ?>" alt="ATEMUP">
+    <span class="preloader-spinner"></span>
+</div>
+<noscript><style>.preloader{display:none !important;}</style></noscript>
+
 <?= View::partial('partials/nav', ['navActivo' => $navActivo ?? '']) ?>
 
 <?= $content ?>

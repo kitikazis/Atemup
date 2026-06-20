@@ -7,10 +7,7 @@ $activo = $navActivo ?? '';
 ?>
 <nav>
     <a class="logo" href="<?= url() ?>">
-        <div class="logo-text">
-            <span><?= e(SITE_NAME) ?></span>
-            <span><?= e(SITE_TAGLINE) ?></span>
-        </div>
+        <img class="logo-img" src="<?= asset('img/atemup_white.png') ?>" alt="<?= e(SITE_NAME . ' - ' . SITE_TAGLINE) ?>">
     </a>
 
     <ul class="nav-menu">
