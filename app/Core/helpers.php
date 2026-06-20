@@ -29,10 +29,25 @@ if (!function_exists('url')) {
 if (!function_exists('asset')) {
     /**
      * Construye la URL de un recurso estático (css, js, img).
+     *
+     * Añade un parámetro ?v=<fecha de modificación> (cache-busting):
+     * cuando cambias un CSS/JS y subes la web, la URL cambia sola y el
+     * navegador descarga la versión nueva sin que el usuario tenga que
+     * limpiar la caché ni entrar en modo incógnito.
      */
     function asset(string $path): string
     {
-        return BASE_URL . 'assets/' . ltrim($path, '/');
+        $rel = ltrim($path, '/');
+        $url = BASE_URL . 'assets/' . $rel;
+
+        if (defined('ROOT_PATH')) {
+            $file = ROOT_PATH . '/assets/' . $rel;
+            if (is_file($file)) {
+                $url .= '?v=' . filemtime($file);
+            }
+        }
+
+        return $url;
     }
 }
 

@@ -34,6 +34,37 @@ document.addEventListener('DOMContentLoaded', function () {
         update();
     }
 
+    /* -------- Inicio: contadores animados ------------------ */
+    const stats = document.querySelectorAll('.stat-num');
+    if (stats.length) {
+        const animate = function (el) {
+            const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+            const suffix = el.getAttribute('data-suffix') || '';
+            const duration = 1500;
+            const start = performance.now();
+            const step = function (now) {
+                const progress = Math.min((now - start) / duration, 1);
+                el.textContent = Math.floor(progress * target) + suffix;
+                if (progress < 1) { requestAnimationFrame(step); }
+            };
+            requestAnimationFrame(step);
+        };
+
+        if ('IntersectionObserver' in window) {
+            const obs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        animate(entry.target);
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.4 });
+            stats.forEach(function (s) { obs.observe(s); });
+        } else {
+            stats.forEach(animate);
+        }
+    }
+
     /* -------- Botón "volver arriba" ------------------------ */
     const scrollTop = document.getElementById('scrollTop');
     if (scrollTop) {
