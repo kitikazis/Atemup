@@ -26,12 +26,12 @@ $errores = $errores ?? [];
             <h2 class="info-title">Oficina Central</h2>
 
             <div class="info-item">
-                <div class="info-icon">📍</div>
+                <div class="info-icon"><?= icon('pin') ?></div>
                 <div class="info-text"><?= e(SITE_ADDRESS) ?></div>
             </div>
 
             <div class="info-item">
-                <div class="info-icon">📞</div>
+                <div class="info-icon"><?= icon('phone') ?></div>
                 <div class="info-text">
                     <a href="tel:<?= preg_replace('/\s+/', '', SITE_PHONE) ?>"><?= e(SITE_PHONE) ?></a>
                     | <a href="tel:<?= preg_replace('/\s+/', '', SITE_PHONE_2) ?>"><?= e(SITE_PHONE_2) ?></a>
@@ -39,14 +39,14 @@ $errores = $errores ?? [];
             </div>
 
             <div class="info-item">
-                <div class="info-icon">✉️</div>
+                <div class="info-icon"><?= icon('mail') ?></div>
                 <div class="info-text">
                     <a href="mailto:<?= e(SITE_EMAIL) ?>"><?= e(SITE_EMAIL) ?></a>
                 </div>
             </div>
 
             <div class="info-item">
-                <div class="info-icon">📍</div>
+                <div class="info-icon"><?= icon('pin') ?></div>
                 <div class="info-text"><?= e(SITE_CITY) ?></div>
             </div>
         </div>

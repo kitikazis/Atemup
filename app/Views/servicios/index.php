@@ -16,7 +16,7 @@
     <div class="servicios-grid">
         <?php foreach ($servicios as $servicio): ?>
             <div class="service-card">
-                <div class="service-icon"><?= e($servicio['icono']) ?></div>
+                <div class="service-icon"><?= icon($servicio['icono']) ?></div>
                 <h3><?= e($servicio['titulo']) ?></h3>
                 <p><?= e($servicio['descripcion']) ?></p>
                 <a href="<?= url('contacto') ?>" class="service-link">Conocer más →</a>

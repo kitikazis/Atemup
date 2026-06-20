@@ -14,7 +14,7 @@
     </div>
 
     <div class="hero-asociados-image">
-        <div class="image-placeholder">🌐</div>
+        <div class="image-placeholder"><?= icon('globe') ?></div>
     </div>
 </section>
 
@@ -27,7 +27,7 @@
     <div class="beneficios-grid">
         <?php foreach ($beneficios as $beneficio): ?>
             <div class="benefit-card">
-                <div class="benefit-icon"><?= e($beneficio['icono']) ?></div>
+                <div class="benefit-icon"><?= icon($beneficio['icono']) ?></div>
                 <h3><?= e($beneficio['titulo']) ?></h3>
                 <p><?= e($beneficio['descripcion']) ?></p>
             </div>

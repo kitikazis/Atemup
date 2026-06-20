@@ -258,3 +258,31 @@ footer {
         text-align: center;
     }
 }
+
+/* ----------------------- ÍCONOS SVG ------------------------ */
+svg.icon,
+svg.icon-inline { display: inline-block; vertical-align: middle; }
+
+/* Tarjetas (servicios, beneficios, servicios de inicio) */
+.service-icon,
+.benefit-icon,
+.home-service-icon { color: #ef4444; line-height: 0; }
+
+.service-icon svg,
+.benefit-icon svg { width: 48px; height: 48px; }
+
+.home-service-icon svg { width: 40px; height: 40px; }
+
+/* Noticias */
+.news-image svg { width: 64px; height: 64px; color: #fff; }
+.news-date svg { width: 14px; height: 14px; }
+
+/* Contacto */
+.info-icon { color: #ef4444; }
+.info-icon svg { width: 22px; height: 22px; }
+
+/* Placeholder de asociados */
+.image-placeholder svg { width: 140px; height: 140px; color: #fff; opacity: 0.85; }
+
+/* Íconos en línea (footer) */
+.icon-inline { width: 16px; height: 16px; margin-right: 5px; }

@@ -108,17 +108,17 @@
 
     <div class="home-services-grid">
         <div class="home-service-card">
-            <div class="home-service-icon">🧭</div>
+            <div class="home-service-icon"><?= icon('compass') ?></div>
             <h3>Asesoría</h3>
             <p>Brindamos asesoría especializada en gestión pública, planificación estratégica y mejora institucional.</p>
         </div>
         <div class="home-service-card">
-            <div class="home-service-icon">📐</div>
+            <div class="home-service-icon"><?= icon('pen') ?></div>
             <h3>Consultoría</h3>
             <p>Consultoría técnica aplicada en diseño y evaluación de proyectos. Soluciones sostenibles y normadas.</p>
         </div>
         <div class="home-service-card">
-            <div class="home-service-icon">🛠️</div>
+            <div class="home-service-icon"><?= icon('tool') ?></div>
             <h3>Asistencia Técnica</h3>
             <p>Ofrecemos asistencia técnica continua para fortalecer capacidades institucionales y operativas.</p>
         </div>

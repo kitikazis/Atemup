@@ -16,32 +16,32 @@ class Beneficio
     {
         return [
             [
-                'icono'       => '📚',
+                'icono'       => 'book',
                 'titulo'      => 'Acceso a Recursos',
                 'descripcion' => 'Biblioteca digital con documentos, guías técnicas e instrumentos de gestión municipal.',
             ],
             [
-                'icono'       => '🎓',
+                'icono'       => 'graduation',
                 'titulo'      => 'Capacitación Continua',
                 'descripcion' => 'Programas de formación para funcionarios municipales, con certificación.',
             ],
             [
-                'icono'       => '🤝',
+                'icono'       => 'users',
                 'titulo'      => 'Red de Contactos',
                 'descripcion' => 'Comunidad de alcaldes y funcionarios para compartir experiencias y buenas prácticas.',
             ],
             [
-                'icono'       => '💼',
+                'icono'       => 'briefcase',
                 'titulo'      => 'Asesoría Profesional',
                 'descripcion' => 'Acceso a especialistas en gestión municipal, finanzas y administración local.',
             ],
             [
-                'icono'       => '📊',
+                'icono'       => 'chart',
                 'titulo'      => 'Comparativo de Desempeño',
                 'descripcion' => 'Comparación del desempeño municipal con indicadores técnicos.',
             ],
             [
-                'icono'       => '🎯',
+                'icono'       => 'tag',
                 'titulo'      => 'Descuentos Especiales',
                 'descripcion' => 'Tarifas preferenciales en servicios de consultoría y auditoría.',
             ],

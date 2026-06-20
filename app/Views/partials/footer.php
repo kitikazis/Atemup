@@ -17,9 +17,9 @@
         <div class="footer-section">
             <h3>Contacto</h3>
             <ul>
-                <li><a href="tel:<?= preg_replace('/\s+/', '', SITE_PHONE) ?>">📞 <?= e(SITE_PHONE) ?></a></li>
-                <li><a href="mailto:<?= e(SITE_EMAIL) ?>">📧 <?= e(SITE_EMAIL) ?></a></li>
-                <li><a href="<?= url('contacto') ?>">📍 <?= e(SITE_ADDRESS) ?></a></li>
+                <li><a href="tel:<?= preg_replace('/\s+/', '', SITE_PHONE) ?>"><?= icon('phone', 'icon-inline') ?> <?= e(SITE_PHONE) ?></a></li>
+                <li><a href="mailto:<?= e(SITE_EMAIL) ?>"><?= icon('mail', 'icon-inline') ?> <?= e(SITE_EMAIL) ?></a></li>
+                <li><a href="<?= url('contacto') ?>"><?= icon('pin', 'icon-inline') ?> <?= e(SITE_ADDRESS) ?></a></li>
             </ul>
         </div>
 

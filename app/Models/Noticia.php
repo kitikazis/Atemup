@@ -37,7 +37,7 @@ class Noticia
             'editorial'  => [],
             'normativas' => [
                 [
-                    'icono'    => '📋',
+                    'icono'    => 'file',
                     'fecha'    => '15 de junio, 2024',
                     'titulo'   => 'Nueva Normativa de Gestión Municipal 2024',
                     'extracto' => 'Se ha establecido nuevas directrices para la gestión administrativa en municipalidades del país.',
@@ -45,13 +45,13 @@ class Noticia
             ],
             'nacional' => [
                 [
-                    'icono'    => '🏛️',
+                    'icono'    => 'building',
                     'fecha'    => '12 de junio, 2024',
                     'titulo'   => 'Conferencia Nacional de Municipalidades',
                     'extracto' => 'Se realizó exitosa conferencia con asistencia de representantes de municipios del país.',
                 ],
                 [
-                    'icono'    => '📊',
+                    'icono'    => 'chart',
                     'fecha'    => '10 de junio, 2024',
                     'titulo'   => 'Informe de Desempeño Municipal Semestral',
                     'extracto' => 'Se presentó el informe de evaluación de municipalidades a nivel nacional.',

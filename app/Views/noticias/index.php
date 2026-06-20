@@ -32,9 +32,9 @@
                 <div class="news-grid">
                     <?php foreach ($items as $noticia): ?>
                         <div class="news-card">
-                            <div class="news-image"><?= e($noticia['icono']) ?></div>
+                            <div class="news-image"><?= icon($noticia['icono']) ?></div>
                             <div class="news-content">
-                                <div class="news-date">📅 <?= e($noticia['fecha']) ?></div>
+                                <div class="news-date"><?= icon('calendar') ?> <?= e($noticia['fecha']) ?></div>
                                 <h3 class="news-title"><?= e($noticia['titulo']) ?></h3>
                                 <p class="news-excerpt"><?= e($noticia['extracto']) ?></p>
                                 <a href="#" class="news-link">Leer más →</a>
