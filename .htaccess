@@ -25,6 +25,11 @@ DirectoryIndex index.php
 # (config, app y storage no deben servirse por HTTP)
 RedirectMatch 403 ^/?(config|app|storage)(/|$)
 
+# --- Proteger control de versiones y archivos de proyecto --
+# (la carpeta .git y otros archivos no deben servirse por HTTP)
+RedirectMatch 403 ^/?\.git(/|$)
+RedirectMatch 403 ^/?(\.gitignore|README\.md|composer\.(json|lock))$
+
 # --- Cabeceras de seguridad básicas ------------------------
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
