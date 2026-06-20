@@ -1,0 +1,46 @@
+# ============================================================
+# ATEMUP - Configuración Apache (cPanel / hosting compartido)
+# ============================================================
+
+# --- URLs amigables: todo pasa por index.php ---------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Si la app se instala en un subdirectorio, descomenta y ajusta:
+    # RewriteBase /
+
+    # No reescribir archivos o carpetas que existen físicamente
+    # (assets, imágenes, css, js, etc. se sirven directamente)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Enviar el resto a index.php conservando la ruta
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+# --- Documento de inicio -----------------------------------
+DirectoryIndex index.php
+
+# --- Proteger carpetas internas de la aplicación -----------
+# (config, app y storage no deben servirse por HTTP)
+RedirectMatch 403 ^/?(config|app|storage)(/|$)
+
+# --- Cabeceras de seguridad básicas ------------------------
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# --- No listar el contenido de los directorios -------------
+Options -Indexes
+
+# --- Cache de assets estáticos -----------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+</IfModule>

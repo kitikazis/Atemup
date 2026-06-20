@@ -1,0 +1,21 @@
+# Mensajes guardados del formulario de contacto
+/storage/*.log
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración local de editores
+.vscode/
+.idea/
+
+# Credenciales y datos sensibles (SOLO LOCAL - nunca subir a GitHub)
+CREDENCIALES-LOCAL.md
+.secrets/
+*.local
+.env
+.env.*
+
+# Herramientas locales (no forman parte del sitio)
+.claude/
+/scripts/auto-push.sh

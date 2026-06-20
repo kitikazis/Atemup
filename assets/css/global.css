@@ -1,0 +1,260 @@
+/* ============================================================
+   ATEMUP - Estilos globales (compartidos por todas las páginas)
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ---------------------------- NAVBAR ----------------------- */
+nav {
+    background-color: #1e293b;
+    padding: 0 60px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.logo-text span:first-child {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.logo-text span:last-child {
+    font-size: 11px;
+    line-height: 1;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    list-style: none;
+    flex: 1;
+    margin-left: 80px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-menu a:hover { color: #ef4444; }
+.nav-menu a.active { color: #ef4444; }
+
+.dropdown-arrow { font-size: 12px; }
+
+.nav-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.btn-afiliate {
+    background: white;
+    color: #1e293b;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.btn-afiliate:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.btn-consult {
+    background: #ef4444;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.btn-consult:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+/* ---------------------------- FOOTER ----------------------- */
+footer {
+    background: #1e293b;
+    color: white;
+    padding: 60px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-section ul { list-style: none; }
+.footer-section li { margin-bottom: 12px; }
+
+.footer-section a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-section a:hover { color: #ef4444; }
+
+.footer-bottom {
+    border-top: 1px solid #334155;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+.footer-links { display: flex; gap: 20px; }
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover { color: #ef4444; }
+
+/* ------------------------ WHATSAPP BTN --------------------- */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 100;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn svg { width: 32px; height: 32px; }
+
+/* --------------------------- ALERTAS ----------------------- */
+.alert {
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+}
+
+.alert-error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+.field-error {
+    color: #fca5a5;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* ----------------------- RESPONSIVE ------------------------ */
+@media (max-width: 1024px) {
+    nav { padding: 0 40px; }
+    .nav-menu { gap: 20px; margin-left: 40px; }
+}
+
+@media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-menu { display: none; }
+    .nav-right .btn-afiliate { display: none; }
+
+    .footer { padding: 40px 20px; }
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
