@@ -12,6 +12,17 @@ declare(strict_types=1);
 // 1) Configuración global y constantes (rutas, BASE_URL, errores...)
 require __DIR__ . '/config/config.php';
 
+// 1.1) Caché del documento HTML:
+//   El HTML NO se cachea, así el navegador siempre pide la última versión
+//   de la página y ve los enlaces de CSS/JS/imágenes con su ?v=<fecha>
+//   actualizado. Los archivos estáticos sí se cachean (con cache-busting),
+//   por lo que el usuario siempre recibe lo último sin limpiar nada.
+if (!headers_sent()) {
+    header('Cache-Control: no-cache, no-store, must-revalidate, max-age=0');
+    header('Pragma: no-cache');
+    header('Expires: 0');
+}
+
 // 2) Núcleo MVC (autoload sencillo + helpers)
 require APP_PATH . '/Core/helpers.php';
 require APP_PATH . '/Core/View.php';
